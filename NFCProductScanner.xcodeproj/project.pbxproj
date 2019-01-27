@@ -8,20 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		8B673FEB21FCBA4B009D51D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B673FEA21FCBA4B009D51D0 /* AppDelegate.swift */; };
-		8B673FED21FCBA4B009D51D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B673FEC21FCBA4B009D51D0 /* ViewController.swift */; };
 		8B673FF021FCBA4B009D51D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B673FEE21FCBA4B009D51D0 /* Main.storyboard */; };
 		8B673FF221FCBA4C009D51D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B673FF121FCBA4C009D51D0 /* Assets.xcassets */; };
 		8B673FF521FCBA4C009D51D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B673FF321FCBA4C009D51D0 /* LaunchScreen.storyboard */; };
+		8B673FFE21FCBF07009D51D0 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B673FFD21FCBF07009D51D0 /* ProductViewController.swift */; };
+		8B67400021FCBF12009D51D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B673FFF21FCBF12009D51D0 /* MainViewController.swift */; };
+		8B67400221FCBF4C009D51D0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67400121FCBF4C009D51D0 /* Product.swift */; };
+		8B67400421FD8DD0009D51D0 /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67400321FD8DD0009D51D0 /* ProductStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B673FE721FCBA4B009D51D0 /* NFCProductScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFCProductScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B673FEA21FCBA4B009D51D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B673FEC21FCBA4B009D51D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B673FEF21FCBA4B009D51D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B673FF121FCBA4C009D51D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B673FF421FCBA4C009D51D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B673FF621FCBA4C009D51D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B673FFC21FCBA70009D51D0 /* NFCProductScanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NFCProductScanner.entitlements; sourceTree = "<group>"; };
+		8B673FFD21FCBF07009D51D0 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		8B673FFF21FCBF12009D51D0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8B67400121FCBF4C009D51D0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		8B67400321FD8DD0009D51D0 /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +61,12 @@
 		8B673FE921FCBA4B009D51D0 /* NFCProductScanner */ = {
 			isa = PBXGroup;
 			children = (
+				8B673FFC21FCBA70009D51D0 /* NFCProductScanner.entitlements */,
+				8B673FFF21FCBF12009D51D0 /* MainViewController.swift */,
 				8B673FEA21FCBA4B009D51D0 /* AppDelegate.swift */,
-				8B673FEC21FCBA4B009D51D0 /* ViewController.swift */,
+				8B673FFD21FCBF07009D51D0 /* ProductViewController.swift */,
+				8B67400121FCBF4C009D51D0 /* Product.swift */,
+				8B67400321FD8DD0009D51D0 /* ProductStore.swift */,
 				8B673FEE21FCBA4B009D51D0 /* Main.storyboard */,
 				8B673FF121FCBA4C009D51D0 /* Assets.xcassets */,
 				8B673FF321FCBA4C009D51D0 /* LaunchScreen.storyboard */,
@@ -96,6 +107,14 @@
 				TargetAttributes = {
 					8B673FE621FCBA4B009D51D0 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B673FED21FCBA4B009D51D0 /* ViewController.swift in Sources */,
+				8B67400421FD8DD0009D51D0 /* ProductStore.swift in Sources */,
+				8B673FFE21FCBF07009D51D0 /* ProductViewController.swift in Sources */,
+				8B67400221FCBF4C009D51D0 /* Product.swift in Sources */,
+				8B67400021FCBF12009D51D0 /* MainViewController.swift in Sources */,
 				8B673FEB21FCBA4B009D51D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,16 +304,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCProductScanner/NFCProductScanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C2XD9H2JS;
 				INFOPLIST_FILE = NFCProductScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfianlosari.NFCProductScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -300,16 +324,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCProductScanner/NFCProductScanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C2XD9H2JS;
 				INFOPLIST_FILE = NFCProductScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfianlosari.NFCProductScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
