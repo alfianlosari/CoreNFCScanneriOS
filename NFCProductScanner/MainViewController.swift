@@ -13,7 +13,7 @@ import CoreNFC
 class MainViewController: UIViewController {
     
     var session: NFCNDEFReaderSession?
-    var productStore = ProductStore()
+    var productStore = ProductStore.shared
 
     @IBAction func scanTapped(_ sender: Any) {
         guard session == nil else {

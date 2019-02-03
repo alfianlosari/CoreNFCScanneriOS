@@ -10,6 +10,10 @@ import UIKit
 
 struct ProductStore {
     
+    static let shared = ProductStore()
+    
+    private init() {}
+    
     let products = [
         Product(id: "SKU-RES2-982019", name: "RESIDENT EVIL 2", description: """
     The original Resident Evil 2 was released in 1998 and has sold over 4,960,000 copies. The action centers around rookie cop Leon Kennedy and college student Claire Redfield as they fight to survive a mysterious viral outbreak within Raccoon City. The 1998 original was hailed as a gaming masterpiece and propelled Resident Evil into mainstream pop culture and the entertainment you know today.

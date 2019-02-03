@@ -12,13 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var productStore = ProductStore()
-
+    var productStore = ProductStore.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        
-        
         return true
     }
     
@@ -37,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let sku = payloadText.split(separator: "/").last else {
                 return false
         }
-        
         
         guard let product = productStore.product(withID: String(sku)) else {
             return false
